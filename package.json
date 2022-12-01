@@ -5,8 +5,8 @@
   "repository": "https://gitee.com/cai-wenguo/cwg.git",
   "author": "cwg <501615956@qq.com>",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {

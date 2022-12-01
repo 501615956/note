@@ -1,7 +1,6 @@
 ---
 home: true
-
-[//]: # (heroImage: /hero.png)
+heroImage: /img/home_logo.png
 heroText:   CWG
 tagline: 一名前端er的学习笔记
 actionText: Get Started →

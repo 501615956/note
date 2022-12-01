@@ -11,7 +11,7 @@ module.exports = {
   // 默认主题相关配置
   themeConfig: {
     // 配置左上角的 logo
-    // logo: '/img/logo.png',
+    logo: '/img/left_logo.png',
     // 导航栏
     nav: require('./nav.js'),
     // 侧边栏

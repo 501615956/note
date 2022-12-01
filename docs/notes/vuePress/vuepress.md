@@ -4,61 +4,62 @@ sidebar: 'auto'
 
 # VuePress 从 0 开始搭建个人网站
 
-> BruceBlog 从无到有的全过程
+> CWG 从无到有的全过程
 >
 > [VuePress 官网传送门](https://vuepress.vuejs.org/zh/)
 
-## 体验 VuePress
+## 介绍
 
-1. 创建并进入新目录
+VuePress 由两部分组成：第一部分是一个极简静态网站生成器 (opens new window)，它包含由 Vue 驱动的主题系统和插件 API，另一个部分是为书写技术文档而优化的默认主题，它的诞生初衷是为了支持 Vue 及其子项目的文档需求。
 
-```bash
-mkdir bruceblog
-cd bruceblog
-```
+每一个由 VuePress 生成的页面都带有预渲染好的 HTML，也因此具有非常好的加载性能和搜索引擎优化（SEO）。同时，一旦页面被加载，Vue 将接管这些静态内容，并将其转换成一个完整的单页应用（SPA），其他的页面则会只在用户浏览到的时候才按需加载。
 
-2. 初始化 npm
+## 快速上手
+> **前提条件**
+>
+> VuePress 需要 [Node.js](https://nodejs.org/en/) >= 8.6
 
-```bash
-npm init
-```
+本文会帮助你从头搭建一个简单的 VuePress 文档。如果你想在一个现有项目中使用 VuePress 管理文档，从步骤 3 开始。
 
-3. 安装 VuePress
-
-```bash
-npm install -D vuepress
-```
-
-4. 在根目录下创建 docs 文件夹
-
-```bash
-mkdir docs
-```
-
+1. 创建并进入一个新目录
+  ```shell
+  mkdir vuepress-starter && cd vuepress-starter
+  ```
+2. 使用你喜欢的包管理器进行初始化
+  ```shell
+  yarn init # npm init
+  ```
+3. 将 VuePress 安装为本地依赖
+  > VuePress官网已经不再推荐全局安装 VuePress
+  ```shell
+  yarn add -D vuepress# npm install -D vuepress
+  ```
+  > 注意
+  >
+  >如果你的现有项目依赖了 webpack 3.x，我们推荐使用 Yarn (opens new window)而不
+  >是 npm 来安装 VuePress。因为在这种情形下，npm 会生成错误的依赖树。
+4. 创建第一篇文档
+  ```shell
+  mkdir docs && echo '# Hello VuePress' > docs/README.md
+  ```
 5. 在 docs 目录下新建 README.md 文档，并写入一些内容
-
-6. 在 `package.json` 文件添加 `scripts`
-
-```json
-{
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+   
+6. 在 package.json 中添加一些 scripts
+  ```json
+  {
+    "scripts": {
+      "dev": "vuepress dev docs",
+      "build": "vuepress build docs"
+    }
   }
-}
-```
-
+  ```
 7. 启动本地服务器
-
-```bash
-npm run dev
-```
-
-8. 浏览器打开服务器所给地址
+  ```shell
+  yarn docs:dev # npm run docs:dev
+  ```
+  VuePress 会在 [http://localhost:8080](http://localhost:8080)启动一个热重载的开发服务器。
 
 ## 目录结构
-
-以下为 BruceBlog 部分目录结构，比较重要的是 `.vuepress` 目录的结构。官方目录结构请移步 [→](https://vuepress.vuejs.org/zh/guide/directory-structure.html)
 
     .
     ├── docs
@@ -95,6 +96,8 @@ npm run dev
     |
     └── package.json
 
+
+> -------------------------------------------
 ## `config.js` 文件配置
 
 每个配置的作用都写在注释当中。
@@ -149,11 +152,11 @@ module.exports = {
 ```yaml
 ---
 home: true
-heroImage: /img/logo.png
-heroText: BruceBlog
+heroImage: /img/home_logo.png
+heroText:   CWG
 tagline: 一名前端er的学习笔记
 actionText: Get Started →
-actionLink: /notes/
+actionLink: /notes/vuePress/vuepress
 features:
   - title: 前端知识
     details: HTML、CSS、JavaScript、Vue、React...
@@ -161,7 +164,7 @@ features:
     details: 计算机网络、数据结构、操作系统...
   - title: 杂七杂八
     details: 前端面试常见的面试题、资源推荐...
-footer: Oh this is BruceBlog
+    footer:  MIT Licensed | Copyright © 2022-present CWG
 ---
 ```
 
@@ -180,14 +183,27 @@ footer: Oh this is BruceBlog
 // .vuepress/nav.js
 module.exports = [
   {
-    text: 'Resources',
-    link: '/notes/xxx/xxxx',
+    text: 'Home',
+    link: '/',
   },
   {
     text: '前端学习',
     items: [
-      { text: 'Vue', link: '/notes/vue/vue基础' },
-      { text: 'React', link: '/notes/react/react基础' },
+      {
+        text: '基础',
+        items: [
+          {text: 'html', link: '/notes/frontend/html/html'},
+          {text: 'css', link: '/notes/frontend/css/css'},
+          {text: 'js', link: '/notes/frontend/js/js'},
+        ]
+      },
+      {
+        text: '框架',
+        items: [
+          { text: 'Vue', link: '/notes/frontend/vue/vue' },
+          { text: 'React', link: '/notes/frontend/react/react' },
+        ]
+      }
     ],
   },
 ]
@@ -246,37 +262,6 @@ blockquote {
 
 [官方文档](https://vuepress.vuejs.org/zh/config/#styling)
 
-## Emoji
-
-输入
-
-```
-:tada: :smile:
-```
-
-输出
-
-:tada: :smile:
-
-[Emoji 大全](https://www.webfx.com/tools/emoji-cheat-sheet/)
-
-## 搭建过程踩的坑
-
-- h1 标题不会生成目录，因此若想标题出现在目录，请用 h2 和 h3 标题
-- 使用 `![]()` 插入图片时，要填写标准的相对路径，如 `./images/xxx.png`，不要省略前面的 `./`，否则图片无法正常显示
-- 在非代码块中（包括行内代码）不要使用紧贴的大括号，两个同向的大括号之间加个空格
-
-```js
-// 报错写法
-style={{ key: value }}
-// 不报错写法
-style={ { key: value } }
-```
-
-- 侧边栏对应的文件路径要书写正确，否则侧边栏无法展示
-- 若一个目录有 `README.md` 和 `sidebar.js` ，则其子目录文件夹不能再有
-- 总之，如果页面展示出现问题，多看看控制台的报错，一般都会有提示
-
 ## 部署
 
 本人选择部署到 Gitee Pages，官方只有部署到 GitHub Pages 的[教程](https://vuepress.vuejs.org/zh/guide/deploy.html)，不过也是大同小异。
@@ -290,60 +275,57 @@ style={ { key: value } }
 ```js
 module.exports = {
   // 仓库名为 bruceblog
-  base: '/bruceblog/',
+  base: '/cwg/',
 }
 ```
 
-2. 在 `bruceblog` 目录下运行打包命令
+2. 在 `cwg` 目录创建文件`deploy.sh`
 
-```bash
-npm run build
-```
+```shell
+// deploy.sh
+#!/usr/bin/env sh
 
-3. 打包完成后，会生成 `dist` 文件夹，进入该文件夹
+# 确保脚本抛出遇到的错误
+set -e
 
-```bash
+# 生成静态文件
+npm run docs:build
+
+# 进入生成的文件夹
 cd docs/.vuepress/dist
-```
 
-4. 初始化 git，并添加暂存区，提交本地库
+# 如果是发布到自定义域名
+# echo 'www.example.com' > CNAME
 
-```bash
 git init
 git add -A
-git commit -m 'init bruceblog' -a
+git commit -m 'deploy'
+
+# 如果发布到 https://<USERNAME>.gitee.io
+# git push -f git@gitee.com:<USERNAME>/<USERNAME>.gitee.io.git master
+
+# 如果发布到 https://<USERNAME>.gitee.io/<REPO>
+# git push -f git@gitee.com:<USERNAME>/<REPO>.git master:pages
+
+cd -
 ```
 
-5. 为远程仓库起别名
+> **提示**
+>
+> 你可以在你的持续集成的设置中，设置在每次 push 代码时自动运行上述脚本。
+3. 在 package.json 中添加一些 scripts
+  ```json
+  {
+    "scripts": {
+      "deploy": "bash deploy.sh"
+    }
+  }
+  ```
 
-```bash
-git remote add origin 远程仓库地址
-```
-
-6. 拉取远程仓库分支，与本地分支合并
-
-本人额外创建了一个分支，`master` 分支保存原始的 markdown 文档，`pages`分支则用于上传打包后的文件，并使用 `pages` 分支部署 Gitee Pages。
-
-```bash
-git pull origin pages
-```
-
-7. 推送本地分支到远程分支
-
-```bash
-git push origin master:pages
-```
-
-8. 选择部署分支，并开启 Gitee Pages 服务
-
-至此，BruceBlog 的搭建大功告成！:tada::smile:
-
-## 更新网站内容
-
-> VuePress 每次打包生成的 dist 都不相同，因此尽量有比较大改动时才更新网站，这不像 docsify 那么方便自由
-
-- 本地拷贝一份 `.git` 文件夹备用，删除旧的 `dist` 文件夹
-- 重新打包生成新的 `dist` 文件夹
-- 把备用 `.git` 文件夹拷贝到新的 `dist` 文件夹中
-- 将修改添加暂存区，提交本地库，并推送到远程分支
-- 如此，既能更新远程 `pages` 分支内容，也能同步 git 的历史操作记录
+4. 运行
+  > **注意**
+  >
+  > 如果`PowerShell`运行不了要使用`Git Bash`运行
+  ```shell
+  yarn deploy
+  ```
