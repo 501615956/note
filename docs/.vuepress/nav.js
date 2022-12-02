@@ -10,7 +10,7 @@ module.exports = [
         text: '基础',
         items: [
           {text: 'html', link: '/notes/frontend/html/html'},
-          {text: 'css', link: '/notes/frontend/css/css基本样式'},
+          {text: 'css', link: '/notes/frontend/css/css命名规范'},
           {text: 'js', link: '/notes/frontend/js/js'},
         ]
       },
