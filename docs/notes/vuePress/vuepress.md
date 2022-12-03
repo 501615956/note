@@ -274,7 +274,7 @@ blockquote {
 
 ```js
 module.exports = {
-  // 仓库名为 bruceblog
+  // 仓库名为 cwg
   base: '/cwg/',
 }
 ```
@@ -289,7 +289,7 @@ module.exports = {
 set -e
 
 # 生成静态文件
-npm run docs:build
+npm run build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
@@ -329,3 +329,6 @@ cd -
   ```shell
   yarn deploy
   ```
+  > 运行该命令会在该仓库下创建一个新的分支pages，> pages分支中就是可以部署的静态文件。
+  > 
+  > 我们需要开启git page服务，开启完成后选择pages分支部署。（注意该仓库需要设置为公开的）。
