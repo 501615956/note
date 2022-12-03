@@ -3,6 +3,8 @@ module.exports = {
   base: '/cwg/',
   title: 'Hello CWG',
   description: 'Just playing around',
+  // 自定义网站 favicon
+  head: [['link', { rel: 'icon', href: '/img/logo.png' }]],
   // markdown 相关配置
   markdown: {
     // 代码块行号
