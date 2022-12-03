@@ -12,5 +12,8 @@ module.exports = {
   // google-analytics 监控配置
   // "@vuepress/google-analytics": {
   //   'ga': ga
-  // }
+  // },
+  '@vuepress/medium-zoom': {
+    selector: 'img',
+  }
 }

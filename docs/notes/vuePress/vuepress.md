@@ -14,9 +14,9 @@ VuePress 由两部分组成：第一部分是一个极简静态网站生成器 (
 每一个由 VuePress 生成的页面都带有预渲染好的 HTML，也因此具有非常好的加载性能和搜索引擎优化（SEO）。同时，一旦页面被加载，Vue 将接管这些静态内容，并将其转换成一个完整的单页应用（SPA），其他的页面则会只在用户浏览到的时候才按需加载。
 
 ## 快速上手
-> **前提条件**
->
-> VuePress 需要 [Node.js](https://nodejs.org/en/) >= 8.6
+::: warning 前提条件
+VuePress 需要 [Node.js](https://nodejs.org/en/) >= 8.6
+:::
 
 本文会帮助你从头搭建一个简单的 VuePress 文档。如果你想在一个现有项目中使用 VuePress 管理文档，从步骤 3 开始。
 
@@ -24,26 +24,26 @@ VuePress 由两部分组成：第一部分是一个极简静态网站生成器 (
   ```shell
   mkdir vuepress-starter && cd vuepress-starter
   ```
-2. 使用你喜欢的包管理器进行初始化
+1. 使用你喜欢的包管理器进行初始化
   ```shell
   yarn init # npm init
   ```
-3. 将 VuePress 安装为本地依赖
+1. 将 VuePress 安装为本地依赖
   > VuePress官网已经不再推荐全局安装 VuePress
   ```shell
   yarn add -D vuepress# npm install -D vuepress
   ```
-  > 注意
-  >
-  >如果你的现有项目依赖了 webpack 3.x，我们推荐使用 Yarn (opens new window)而不
-  >是 npm 来安装 VuePress。因为在这种情形下，npm 会生成错误的依赖树。
-4. 创建第一篇文档
+::: warning 注意
+如果你的现有项目依赖了 webpack 3.x，我们推荐使用 Yarn (opens new window)是 npm 来安装 VuePress。因为在这种情形下，npm 会生成错误的依赖树。而不
+:::
+
+1. 创建第一篇文档
   ```shell
   mkdir docs && echo '# Hello VuePress' > docs/README.md
   ```
-5. 在 docs 目录下新建 README.md 文档，并写入一些内容
+1. 在 docs 目录下新建 README.md 文档，并写入一些内容
    
-6. 在 package.json 中添加一些 scripts
+2. 在 package.json 中添加一些 scripts
   ```json
   {
     "scripts": {
@@ -52,7 +52,7 @@ VuePress 由两部分组成：第一部分是一个极简静态网站生成器 (
     }
   }
   ```
-7. 启动本地服务器
+1. 启动本地服务器
   ```shell
   yarn docs:dev # npm run docs:dev
   ```
@@ -309,10 +309,11 @@ git commit -m 'deploy'
 cd -
 ```
 
-> **提示**
->
-> 你可以在你的持续集成的设置中，设置在每次 push 代码时自动运行上述脚本。
-3. 在 package.json 中添加一些 scripts
+::: tip 提示
+你可以在你的持续集成的设置中，设置在每次 push 代码时自动运行上述脚本。
+:::
+
+1. 在 package.json 中添加一些 scripts
   ```json
   {
     "scripts": {
@@ -321,10 +322,11 @@ cd -
   }
   ```
 
-4. 运行
-  > **注意**
-  >
-  > 如果`PowerShell`运行不了要使用`Git Bash`运行
+1. 运行
+::: warning 注意
+如果`PowerShell`运行不了要使用`Git Bash`运行
+:::
+
   ```shell
   yarn deploy
   ```

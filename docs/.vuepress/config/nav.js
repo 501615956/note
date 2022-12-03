@@ -24,6 +24,12 @@ module.exports = [
     ],
   },
   {
+    text: '后端学习',
+    items: [
+      { text: 'nodejs', link: '/notes/backend/nodejs/nodeBasic' }
+    ]
+  },
+  {
     text: '教程',
     items: [
       { text: '云盘挂载', link: '/notes/tutorials/cloudDiskMount' }
