@@ -26,7 +26,7 @@ module.exports = [
   {
     text: '教程',
     items: [
-      { text: '云盘挂载', link: '/notes/tutorials/云盘挂载' }
+      { text: '云盘挂载', link: '/notes/tutorials/cloudDiskMount' }
     ],
   },
   {
@@ -42,7 +42,7 @@ module.exports = [
       {
         text: '其他推荐',
         items: [
-          { text: '300+编程实用工具', link: '/notes/recommend/300+编程实用工具' },
+          { text: '300+编程实用工具', link: '/notes/recommend/300Utils' },
         ]
       },
     ],
