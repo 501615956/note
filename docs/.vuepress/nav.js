@@ -23,4 +23,28 @@ module.exports = [
       }
     ],
   },
+  {
+    text: '教程',
+    items: [
+      { text: '云盘挂载', link: '/notes/tutorials/云盘挂载' }
+    ],
+  },
+  {
+    text: '教程',
+    items: [
+      {
+        text: '我的推荐',
+        items: [
+          // { text: 'Vue', link: '/notes/frontend/vue/vue' },
+          // { text: 'React', link: '/notes/frontend/react/react' },
+        ]
+      },
+      {
+        text: '其他推荐',
+        items: [
+          { text: '300+编程实用工具', link: '/notes/recommend/300+编程实用工具' },
+        ]
+      },
+    ],
+  },
 ]
