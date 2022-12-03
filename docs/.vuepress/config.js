@@ -16,7 +16,7 @@ module.exports = {
     nav: require('./nav.js'),
     // 侧边栏
     sidebar: require('./sidebar.js'),
-    // sidebar: 'auto',
+    sidebar: 'auto',
     // 标题深度，2 表示提取 h2 和 h3 标题
     sidebarDepth: 2,
     // 启用页面滚动效果

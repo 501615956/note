@@ -1,7 +1,3 @@
----
-sidebar: 'auto'
----
-
 # VuePress 从 0 开始搭建个人网站
 
 > CWG 从无到有的全过程

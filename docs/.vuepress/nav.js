@@ -30,15 +30,15 @@ module.exports = [
     ],
   },
   {
-    text: '教程',
+    text: '推荐',
     items: [
-      {
-        text: '我的推荐',
-        items: [
-          // { text: 'Vue', link: '/notes/frontend/vue/vue' },
-          // { text: 'React', link: '/notes/frontend/react/react' },
-        ]
-      },
+      // {
+      //   text: '我的推荐',
+      //   items: [
+      //     { text: 'Vue', link: '/notes/frontend/vue/vue' },
+      //     { text: 'React', link: '/notes/frontend/react/react' },
+      //   ]
+      // },
       {
         text: '其他推荐',
         items: [
