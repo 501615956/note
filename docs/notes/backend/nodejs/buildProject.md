@@ -121,6 +121,7 @@ module.exports = router
 1. 在数据库中，新建 ev_users 表如下：
 
 <img src="https://cdn.nlark.com/yuque/0/2022/png/28469598/1669726089459-079eabba-d100-4169-9390-f85cfecb9917.png#averageHue=%23d0c6ac&clientId=u6beef8a8-b4df-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=257&id=u4e280280&margin=%5Bobject%20Object%5D&name=image.png&originHeight=354&originWidth=939&originalType=binary&ratio=1&rotation=0&showTitle=false&size=101175&status=done&style=none&taskId=u6afe5b36-a99c-4037-b0f2-89d3363bd83&title=&width=682.9090909090909" referrerpolicy='no-referrer'/>
+
 ### 安装并配置 mysql 模块
 > **在 API 接口项目中，需要安装并配置 mysql 这个第三方模块，来连接和操作 MySQL 数据库**
 
