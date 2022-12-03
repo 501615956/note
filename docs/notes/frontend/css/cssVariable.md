@@ -1,7 +1,3 @@
----
-sidebar: 'auto'
----
-
 # css变量
 ```html
 <head>

@@ -1,7 +1,3 @@
----
-sidebar: 'auto'
----
-
 # css命名规范
 ## CSS命名——BEM
 1. BEM是一种CSS命名规范
