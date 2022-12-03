@@ -1,31 +1,31 @@
 # css基本样式
 
 ## 基本样式
-### 1、取消点击时外边框
+### 取消点击时外边框
 ```css
 outline: none; 
 ```
-### 2、 鼠标点击时变小手
+### 鼠标点击时变小手
 ```css
 cursor: pointer;  
 ```
-### 3、设置input中placeholder的颜色
+### 设置input中placeholder的颜色
 ```css
 input::-webkit-input-placeholder{color:(r,g,b);}   
 ```
-### 4、border边框样式  
+### border边框样式  
 ```css
 border: 1px solid #ddd;   /*实线 */
 border: 1px dashed #ddd;   /*虚线（短杠虚线） */
 border: 1px dotted #ddd;   /*虚线（圆点虚线）*/
 ```
-### 5、让元素消失
+### 让元素消失
 ```css
 display: none;        /*让元素消失（元素不占位置）*/
 visibility: hidden;   /*让元素消失（元素还占位置）*/
 opacity: 0;           /*透明度为0 */
 ```
-### 6、省略号（一行/多行）
+### 省略号（一行/多行）
 ```css
 /* 一行省略号 */
 white-space:nowrap;        /*让内容不换行*/
@@ -39,16 +39,16 @@ display: -webkit-box;            /*创建弹性伸缩盒子模型显示*/
 text-overflow: ellipsis;         /*溢出部分变省略号*/
 overflow: hidden;                /*溢出隐藏*/
 ```
-### 7、背景缩放
+### 背景缩放
 ```css
 background-size: cover;       /*让背景以高度缩放（多余的部分不要）*/
 min-width: 1200px;       /*给缩放的背景设置一个最小宽度  */   
 ```
-### 8、取消图片默认的底部边距
+### 取消图片默认的底部边距
 ```css
 vertical-align: middle;
 ```
-### 9、滚动条
+### 滚动条
 ```css
 /* 隐藏滚动条*/
 div::-webkit-scrollbar {
