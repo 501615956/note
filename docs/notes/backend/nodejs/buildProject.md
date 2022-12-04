@@ -446,10 +446,10 @@ npm i express-jwt
 const config = require('./config')
 
 // 解析 token 的中间件
-const expressJWT = require('express-jwt')
+const { expressjwt: jwt } = require('express-jwt')
 
 // 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
-app.use(expressJWT({ secret: config.jwtSecretKey, algorithms: ["HS256"] }).unless({ path: [/^\/api\//] }))
+app.use(jwt({ secret: config.jwtSecretKey, algorithms: ["HS256"] }).unless({ path: [/^\/api\//] }))
 ```
 
 3. 在 app.js 中的 错误级别中间件 里面，捕获并处理 Token 认证失败后的错误：
