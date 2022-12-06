@@ -32,7 +32,8 @@ module.exports = [
   {
     text: '教程',
     items: [
-      { text: '云盘挂载', link: '/notes/tutorials/cloudDiskMount' }
+      { text: '云盘挂载', link: '/notes/tutorials/cloudDiskMount' },
+      { text: 'nvm安装', link: '/notes/tutorials/nvm' }
     ],
   },
   {
