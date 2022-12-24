@@ -1,15 +1,11 @@
 module.exports = [
   {
-    text: 'Home',
-    link: '/',
-  },
-  {
     text: '前端学习',
     items: [
       {
         text: '基础',
         items: [
-          {text: 'html', link: '/notes/frontend/html/html'},
+          {text: 'html', link: '/notes/frontend/html/tag'},
           {text: 'css', link: '/notes/frontend/css/cssName'},
           {text: 'js', link: '/notes/frontend/js/js'},
         ]
@@ -50,6 +46,21 @@ module.exports = [
         items: [
           { text: '应用', link: '/notes/recommend/apply/computer' },
           { text: '插件', link: '/notes/recommend/plugin/vscode' },
+        ]
+      },
+    ],
+  },
+  {
+    text: '面试',
+    items: [
+      {
+        text: '前端面试',
+        items: [
+          { text: 'html', link: '/notes/interview/html/base' },
+          { text: 'css', link: '/notes/interview/css/base' },
+          { text: 'js', link: '/notes/interview/js/base' },
+          { text: 'vue', link: '/notes/interview/vue/base' },
+          { text: '微信小程序', link: '/notes/interview/weChatApp/base' },
         ]
       },
     ],

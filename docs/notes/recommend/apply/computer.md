@@ -31,13 +31,13 @@
 #### RevoUninstaller
 > 不会在系统中留下软件的任何残留，并能用来管理启动项，以保持系统快速启动，不过需要收费，免费30天
 
-## vpn代理、下载器等相关软件
+## 加速、下载器等相关软件
 
 #### [Clash for Windows](https://docs.cfw.lbyczf.com/)
 > Clash 的 Windows/macOS/Linux 图形客户端
 
 #### [Watt Toolkit](https://steampp.net/)
-> 是一个开源跨平台的多功能游戏工具箱。可以急速steam、github
+> 是一个开源跨平台的多功能游戏工具箱。可以加速steam、github
 
 #### NDM 
 > 下载器
@@ -88,7 +88,7 @@
 #### [TranslucentTB](https://github.com/TranslucentTB/TranslucentTB)
 > 任务栏透明工具
 
-#### [oh-my-posh](oh-my-posh)
+#### oh-my-posh
 > PowerShell美化，安装插件工具
 
 

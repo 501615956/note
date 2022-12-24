@@ -11,4 +11,8 @@ module.exports = [
     title: 'css变量',
     path: '/notes/frontend/css/cssVariable'
   },
+  {
+    title: 'flex布局',
+    path: '/notes/frontend/css/flex'
+  },
 ]

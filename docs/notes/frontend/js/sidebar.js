@@ -11,8 +11,16 @@ module.exports = [
     path: '/notes/frontend/js/js'
   },
   {
-    title: '数组',
+    title: 'date',
+    path: '/notes/frontend/js/date'
+  },
+  {
+    title: 'Array',
     path: '/notes/frontend/js/array/arr'
+  },
+  {
+    title: 'ES6 +',
+    path: '/notes/frontend/js/es'
   },
   {
     title: '数组的高阶方法',
