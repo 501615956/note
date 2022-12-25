@@ -588,6 +588,24 @@ has(target, propKey)
 
 
 ## `Fetch` 网络请求
+```js
+fetch(url, options).then((response) => {
+  console.log(response.status);
+});
+```
+#### 参数
+* `url` : 是发送网络请求的地址
+* `options` : 发送请求参数
+  * body - http请求参数
+  * mode - 指定请求模式。默认值为cros:允许跨域;same-origin:只允许同源请求;no-cros:只限于get、post和head,并且只能使    用有限的几个简单标头。
+  * cache - 用户指定缓存。
+  * method - 请求方法，默认GET
+  * signal - 用于取消 fetch
+  * headers - http请求头设置
+  * keepalive - 用于页面卸载时，告诉浏览器在后台保持连接，继续发送数据。
+  * credentials - cookie设置，默认omit，忽略不带cookie，same-origin同源请求带cookie，inclue无论跨域还是同源都会带cookie。
+
+#### 使用
 ```javascript
 fetch('http://example.com/movies.json')
   .then(function(data) {
@@ -600,14 +618,14 @@ fetch('http://example.com/movies.json')
 ```
 ## `js` 中 `??` 和 `?.` 的使用  
 参考链接：[https://juejin.cn/post/7072274726940311588](https://juejin.cn/post/7072274726940311588)
-### `??` 使用
+#### `??` 使用
 > 用`??`代替`||`，用于判断运算符左侧的值为`null`或`undefined`时，才返回右侧的值
 > 
 > `??`运算符是 ES2020 引入，也被称为`null`判断运算符( Nullish coalescing operator)
 > 
 > 它的行为类似`||`，但是更严`||`运算符是左边是空字符串或false或0等false值，都会返回后侧的值。而??必须运算符左侧的值为`null`或`undefined`时，才会返回右侧的值。因此`0||1`的结果为`1`，`0??1`的结果为`0`
 
-### `?.` 使用
+#### `?.` 使用
 > 使用`?.`简化`&&`和三元运算符
 > 
 > `?.`也是ES2020 引入，有人称为链判断运算符（optional chaining operator）
