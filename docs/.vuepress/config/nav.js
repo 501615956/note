@@ -16,13 +16,31 @@ module.exports = [
           { text: 'Vue', link: '/notes/frontend/vue/vue' },
           { text: 'React', link: '/notes/frontend/react/react' },
         ]
+      },
+      {
+        text: '扩展',
+        items: [
+          { text: '实用功能', link: '/notes/frontend/extend/practical' },
+          { text: '知识补充', link: '/notes/frontend/extend/knowledge' }
+        ]
       }
     ],
   },
   {
     text: '后端学习',
     items: [
-      { text: 'nodejs', link: '/notes/backend/nodejs/nodeBasic' }
+      {
+        text: '语言', 
+        items: [
+          { text: 'nodejs', link: '/notes/backend/nodejs/nodeBasic' },
+        ] 
+      },
+      {
+        text: '扩展', 
+        items: [
+          { text: '知识补充', link: '/notes/backend/extend/knowledge' },
+        ] 
+      },
     ]
   },
   {
