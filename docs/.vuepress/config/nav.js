@@ -7,7 +7,7 @@ module.exports = [
         items: [
           {text: 'html', link: '/notes/frontend/html/tag'},
           {text: 'css', link: '/notes/frontend/css/cssName'},
-          {text: 'js', link: '/notes/frontend/js/js'},
+          {text: 'js', link: '/notes/frontend/js/base/js'},
         ]
       },
       {

@@ -23,7 +23,7 @@ arr.forEach((item, index, arr) => {
 
 ::: warning 注意
 
-注意：`forEach`方法没有返回值，不能`return`
+注意：`forEach`方法没有返回值，不能`return`，且该方法直接改变的是原数组。
 
 :::
 
@@ -31,8 +31,8 @@ arr.forEach((item, index, arr) => {
 
 ```js
 let arr = [1, 2, 3, 4]
-let newArr = arr.filter(item => item + 1) 
-console.log(newArr) // [2, 3, 4, 5]
+arr.filter(item => item + 1) 
+console.log(arr) // [2, 3, 4, 5]
 ```
 
 ## `filter()`

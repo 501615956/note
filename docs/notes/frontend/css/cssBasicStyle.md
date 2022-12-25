@@ -49,12 +49,18 @@ min-width: 1200px;       /*给缩放的背景设置一个最小宽度  */
 vertical-align: middle;
 ```
 ### 滚动条
+
+#### 隐藏滚动条
 ```css
 /* 隐藏滚动条*/
 div::-webkit-scrollbar {
   display: none;
 }
+```
 
+#### 修改滚动条样式
+
+```css
 /* 修改html滚动条样式 */
 ::-webkit-scrollbar {
   background-color: transparent;
@@ -71,7 +77,9 @@ div::-webkit-scrollbar {
 
 ## 图片样式
 ### 警示线
-![](https://cdn.nlark.com/yuque/0/2022/png/28469598/1651551785615-59e1314b-4545-4b31-8fb8-e811e4f064ad.png#averageHue=%23f8f1f1&crop=0&crop=0&crop=1&crop=1&id=nT0JM&originHeight=26&originWidth=710&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+
+<img src="https://cdn.nlark.com/yuque/0/2022/png/28469598/1651551785615-59e1314b-4545-4b31-8fb8-e811e4f064ad.png" referrerpolicy='no-referrer' />
+
 ```css
 background: repeating-linear-gradient(
   -45deg,

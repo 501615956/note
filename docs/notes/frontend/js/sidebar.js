@@ -8,22 +8,38 @@
 module.exports = [
   {
     title: 'js基础',
-    path: '/notes/frontend/js/js'
+    path: '/notes/frontend/js/base/js'
   },
   {
-    title: 'date',
-    path: '/notes/frontend/js/date'
+    title: 'Math',
+    path: '/notes/frontend/js/base/math'
+  },
+  {
+    title: 'Date',
+    path: '/notes/frontend/js/base/date'
   },
   {
     title: 'Array',
     path: '/notes/frontend/js/array/arr'
   },
   {
+    title: 'RegExp',
+    path: '/notes/frontend/js/reg/reg'
+  },
+  {
     title: 'ES6 +',
-    path: '/notes/frontend/js/es'
+    path: '/notes/frontend/js/base/es'
   },
   {
     title: '数组的高阶方法',
     path: '/notes/frontend/js/array/higherMethods'
+  },
+  {
+    title: '常用的数组方法',
+    path: '/notes/frontend/js/array/commonMethods'
+  },
+  {
+    title: '常用正则表达式',
+    path: '/notes/frontend/js/reg/commonReg'
   }
 ]
