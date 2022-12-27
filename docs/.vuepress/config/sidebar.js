@@ -7,4 +7,7 @@ module.exports = {
   '/notes/backend/nodejs': require('../../notes/backend/nodejs/sidebar'),
   '/notes/recommend/apply': require('../../notes/recommend/apply/sidebar'),
   '/notes/recommend/plugin': require('../../notes/recommend/plugin/sidebar'),
+  '/notes/interview/css': require('../../notes/interview/css/sidebar'),
+  '/notes/interview/html': require('../../notes/interview/html/sidebar'),
+  '/notes/interview/js': require('../../notes/interview/js/sidebar'),
 }
