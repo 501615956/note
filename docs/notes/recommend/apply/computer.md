@@ -1,5 +1,9 @@
 
-## 录屏截图软件
+## 效率
+#### [uTools](https://u.tools/?from=itab)
+> 新一代效率工具平台，自由组合插件应用，打造专属你的趁手工具集
+
+## 录屏截图
 
 #### [FastStoneCapture](https://www.faststonecapture.cn/)
 > 支持屏幕录制、滚动截图、高清长图、图片编辑、图片转PDF格式、屏幕取色等等，很多功能，但是收费，不过在淘宝上买一个激活码很便宜。
@@ -20,7 +24,7 @@
 > 很强大的截图软件，F1截图，F3贴图
 
 
-## 卸载软件
+## 卸载
 
 #### [Geek](https://geekuninstaller.com/)
 > 非常轻巧、不需要安装、有免费版和专业版、使用简单	
@@ -31,7 +35,7 @@
 #### RevoUninstaller
 > 不会在系统中留下软件的任何残留，并能用来管理启动项，以保持系统快速启动，不过需要收费，免费30天
 
-## 加速、下载器等相关软件
+## 加速、下载器等相关
 
 #### [Clash for Windows](https://docs.cfw.lbyczf.com/)
 > Clash 的 Windows/macOS/Linux 图形客户端
@@ -45,13 +49,13 @@
 #### [Ant Download Manager](https://www.antdownloadmanager.com/)
 > 下载器
 
-## 激活软件
+## 激活
 
 #### [HEU KMS Activator](https://github.com/zbezj/HEU_KMS_Activator)
 > 系统激活工具、无需联网、一键激活
 
 
-## 远程控制软件
+## 远程控制
 
 #### [TeamViewer](https://www.teamviewer.cn/cn/)
 > 有免费版、很不错的远程软件
@@ -62,7 +66,7 @@
 #### [RustDesk](https://rustdesk.com/zh/)
 > 远程桌面软件，开箱即用，无需任何配置，并且免费
 
-## 驱动下载软件
+## 驱动下载
 
 #### IO bit Driver Booster Pro
 > 最有效和最简单的驱动程序更新工具、收费
@@ -92,7 +96,7 @@
 > PowerShell美化，安装插件工具
 
 
-## 压缩包软件
+## 压缩包
 
 #### [Bandizip](https://www.bandisoft.com/bandizip/)
 > 一个强大的多功能压缩文件管理工具，免费，也有付费版本

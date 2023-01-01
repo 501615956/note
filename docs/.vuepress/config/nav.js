@@ -34,6 +34,7 @@ module.exports = [
         text: '其他文档',
         items: [
           { text: '微信官方文档', link: 'https://developers.weixin.qq.com/doc/' },
+          { text: '其他文档', link: '/notes/document/index' },
         ]
       },
     ]
@@ -98,13 +99,11 @@ module.exports = [
   {
     text: '推荐',
     items: [
-      {
-        text: '工具推荐',
-        items: [
-          { text: '应用', link: '/notes/recommend/apply/computer' },
-          { text: '插件', link: '/notes/recommend/plugin/vscode' },
-        ]
-      },
+      { text: '程序员', link: '/notes/recommend/other/programmer' },
+      { text: '应用', link: '/notes/recommend/apply/computer' },
+      { text: '插件', link: '/notes/recommend/plugin/vscode' },
+      { text: '工具', link: '/notes/recommend/other/tool' },
+      { text: '资源', link: '/notes/recommend/other/resource' }
     ],
   },
   {
