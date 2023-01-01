@@ -1,3 +1,6 @@
+---
+sidebar: 'auto'
+---
 # 文档
 
 ## 学习
@@ -28,7 +31,6 @@
 
 ### [wangEditor](https://www.wangeditor.com/)
 * 非常好用的富文本编辑器
-
 
 
 ## UI库
