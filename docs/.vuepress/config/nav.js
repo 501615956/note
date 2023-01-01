@@ -1,5 +1,44 @@
 module.exports = [
   {
+    text: '文档',
+    items: [
+      {
+        text: '框架',
+        items: [
+          { text: 'Nodejs', link: 'https://nodejs.org/zh-cn/' },
+          { text: 'Vue3', link: 'https://cn.vuejs.org/' },
+          { text: 'React', link: 'https://zh-hans.reactjs.org/' },
+          { text: 'Nuxt', link: 'https://www.nuxtjs.cn/guide' },
+          { text: 'uni-app', link: 'https://uniapp.dcloud.net.cn/' },
+        ]
+      },
+      {
+        text: '库',
+        items: [
+          { text: 'TypeScript', link: 'https://typescript.bootcss.com/' },
+          { text: 'Pinia', link: 'https://pinia.vuejs.org/zh/' },
+          { text: 'Lodash', link: 'https://www.lodashjs.com/' },
+          { text: 'tailwindcss' , link: 'https://www.tailwindcss.cn/'},
+          { text: 'Echarts', link: 'https://echarts.apache.org/zh/index.html' }
+        ]
+      },
+      {
+        text: 'UI库',
+        items: [
+          { text: 'Element Plus', link: 'https://element-plus.org/zh-CN/' },
+          { text: 'Vant 3', link: 'https://vant-contrib.gitee.io/vant/v3/#/zh-CN' },
+          { text: 'uView 3.0', link: 'https://vkuviewdoc.fsq.pub/' },
+        ]
+      },
+      {
+        text: '其他文档',
+        items: [
+          { text: '微信官方文档', link: 'https://developers.weixin.qq.com/doc/' },
+        ]
+      },
+    ]
+  },
+  {
     text: '前端学习',
     items: [
       {
