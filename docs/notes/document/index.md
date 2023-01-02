@@ -32,6 +32,9 @@ sidebar: 'auto'
 ### [wangEditor](https://www.wangeditor.com/)
 * 非常好用的富文本编辑器
 
+### [mitt](https://www.npmjs.com/package/mitt)
+* 一个微型的事件传输库
+* Tiny 200b functional event emitter / pubsub.
 
 ## UI库
 
