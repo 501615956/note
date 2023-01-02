@@ -32,9 +32,14 @@ sidebar: 'auto'
 ### [wangEditor](https://www.wangeditor.com/)
 * 非常好用的富文本编辑器
 
+### [vueUse](https://vueuse.org/)
+* 功能很丰富的组件库
+
 ### [mitt](https://www.npmjs.com/package/mitt)
 * 一个微型的事件传输库
 * Tiny 200b functional event emitter / pubsub.
+
+
 
 ## UI库
 
