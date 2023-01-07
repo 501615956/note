@@ -41,5 +41,9 @@ module.exports = [
   {
     title: '常用正则表达式',
     path: '/notes/frontend/js/reg/commonReg'
+  },
+  {
+    title: 'js中常见的问题',
+    path: '/notes/frontend/js/question/question'
   }
 ]
