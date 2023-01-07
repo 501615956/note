@@ -86,7 +86,8 @@ module.exports = [
   {
     text: '其他学习',
     items: [
-      { text: 'Git', link: '/notes/other/git/git' }
+      { text: 'Git', link: '/notes/other/git/git' },
+      { text: 'pm2', link: '/notes/other/pm2/pm2' }
     ]
   },
   {
