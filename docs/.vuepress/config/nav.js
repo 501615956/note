@@ -2,43 +2,17 @@ module.exports = [
   {
     text: '文档',
     items: [
-      {
-        text: '框架',
-        items: [
-          { text: 'Nodejs', link: 'https://nodejs.org/zh-cn/' },
-          { text: 'Vue3', link: 'https://cn.vuejs.org/' },
-          { text: 'React', link: 'https://zh-hans.reactjs.org/' },
-          { text: 'Nuxt', link: 'https://www.nuxtjs.cn/guide' },
-          { text: 'uni-app', link: 'https://uniapp.dcloud.net.cn/' },
-        ]
-      },
-      {
-        text: '库',
-        items: [
-          { text: 'TypeScript', link: 'https://typescript.bootcss.com/' },
-          { text: 'Pinia', link: 'https://pinia.vuejs.org/zh/' },
-          { text: 'Lodash', link: 'https://www.lodashjs.com/' },
-          { text: 'tailwindcss' , link: 'https://www.tailwindcss.cn/'},
-          { text: 'Echarts', link: 'https://echarts.apache.org/zh/index.html' }
-        ]
-      },
-      {
-        text: 'UI库',
-        items: [
-          { text: 'Element Plus', link: 'https://element-plus.org/zh-CN/' },
-          { text: 'Vant 3', link: 'https://vant-contrib.gitee.io/vant/v3/#/zh-CN' },
-          { text: 'uView 3.0', link: 'https://vkuviewdoc.fsq.pub/' },
-        ]
-      },
-      {
-        text: '其他文档',
-        items: [
-          { text: '微信官方文档', link: 'https://developers.weixin.qq.com/doc/' },
-          { text: '其他文档', link: '/notes/document/index' },
-        ]
-      },
+      { text: 'Vue3', link: 'https://cn.vuejs.org/' },
+      { text: 'uni-app', link: 'https://uniapp.dcloud.net.cn/' },
+      { text: 'TypeScript', link: 'https://typescript.bootcss.com/' },
+      { text: 'Pinia', link: 'https://pinia.vuejs.org/zh/' },
+      { text: 'tailwindcss' , link: 'https://www.tailwindcss.cn/'},
+      { text: 'Element Plus', link: 'https://element-plus.org/zh-CN/' },
+      { text: 'uView 3.0', link: 'https://vkuviewdoc.fsq.pub/' },
+      { text: '微信官方文档', link: 'https://developers.weixin.qq.com/doc/' },
     ]
   },
+  { text: '程序员', link: '/notes/programmer/programmer' },
   {
     text: '前端学习',
     items: [
@@ -48,6 +22,7 @@ module.exports = [
           {text: 'html', link: '/notes/frontend/html/tag'},
           {text: 'css', link: '/notes/frontend/css/cssName'},
           {text: 'js', link: '/notes/frontend/js/base/js'},
+          {text: 'ts', link: '/notes/frontend/ts/base'},
         ]
       },
       {
@@ -100,7 +75,6 @@ module.exports = [
   {
     text: '推荐',
     items: [
-      { text: '程序员', link: '/notes/recommend/other/programmer' },
       { text: '应用', link: '/notes/recommend/apply/computer' },
       { text: '插件', link: '/notes/recommend/plugin/vscode' },
       { text: '工具', link: '/notes/recommend/other/tool' },
