@@ -1,7 +1,7 @@
 
 module.exports = {
-  // 根路径，和仓库名一致
-  base: '/cwg/',
+  // 根路径，如果是gitee和仓库名一致
+  base: '/',
   title: 'Hello CWG',
   description: 'cwg的学习笔记、前端、后端、教程、推荐等内容',
   // 自定义网站 favicon
