@@ -8,6 +8,7 @@
 * 媒体播放的 `video` 标签和 `audio` 标签
 * 本地存储 `localStorage` 和 `sessionStorage`
 * 语意化标签 `article`、`footer`、`header`、`nav`、`section`
-* 绘画标签 `canvas`
+* 绘画标签 `canvas`和`svg`
 
-## `cookies`，`sessionStorage` 和 `localStorage` 的区别？
+
+

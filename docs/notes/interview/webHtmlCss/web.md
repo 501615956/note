@@ -2,8 +2,6 @@
 sidebar: 'auto'
 ---
 
-# 前端web综合面试题
-
 ## 语义化的理解
 * 用正确的标签做正确的事情！
 * `HTML` 语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
@@ -43,3 +41,24 @@ sidebar: 'auto'
   * `403 Forbidden` 禁止访问。
 * `5xx`：5开头的是服务器错误
   * `500 Internal Server Error` 最常见的服务器端错误。
+
+## `cookies`，`sessionStorage` 和 `localStorage` 的区别？
+1. 都可以用来存储数据。
+2. cookie一条数据大小不能超过4KB ，最多不能存储超过20条，如果没有设置过期时间，那么在浏览器关闭后消失。
+3. sessionStorage是会话存储，一条大小不能超过5M，数量没有限制，关掉页面数据消失。
+4. localStorage本地存储，一条大小不超过5M，数量没有限制，除非主动删除，否则数据不会消失。
+
+## W3C标准有哪些
+标准分为三个层面，结构(html)、行为(js)、表现(css)
+标准有:
+* 文档类型需要声明（DOCTYPE）
+* 编码格式需要声明 <meta charset=”utf-8”>
+* javascript代码需要定义
+```html
+<script language=”javascript” type = ”text/javascript”></script>
+```
+* css代码需要定义
+```css
+<style type=”text/css”></style>
+```
+* 标签名字和标签内部属性名字小写等
