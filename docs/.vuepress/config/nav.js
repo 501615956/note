@@ -87,7 +87,7 @@ module.exports = [
       {
         text: '前端面试',
         items: [
-          { text: 'web综合+html+css', link: '/notes/interview/webHtmlCss/web' },
+          { text: 'web基础+html+css', link: '/notes/interview/webHtmlCss/web' },
           // { text: 'html', link: '/notes/interview/html/base' },
           // { text: 'css', link: '/notes/interview/css/base' },
           { text: 'js', link: '/notes/interview/js/base' },

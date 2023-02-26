@@ -10,5 +10,6 @@
 * 语意化标签 `article`、`footer`、`header`、`nav`、`section`
 * 绘画标签 `canvas`和`svg`
 
-
+## `canvas`和`svg`有什么区别
+* 都可以用来绘制图形，但是`canvas`是基于`js`来绘制的，`svg`是基于`xml`来绘制的
 
