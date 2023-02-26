@@ -1,4 +1,10 @@
-## `Vue`怎么进行双向数据绑定，双向数据绑定的原理是什么
+---
+sidebar: 'auto'
+---
+
+# Vue面试题
+
+## `Vue`怎么进行双向数据绑定，双向数据绑定的原理是什么？
 * 使用`v-model`进行双向绑定
 * 原理:采用数据劫持，结合发布者-订阅者模式的方式，通过`Object.defineProperty()`来劫持各个属性的`setter/getter`，在数据变动时发布消息给订阅者，触发相应监听回调。
 * 当把一个普通 `js`对象传给 `Vue` 实例来作为它的 `data` 选项时，`Vue` 将遍历它的属性，用 `Object.defineProperty()` 将它们转为 `setter/getter`。
