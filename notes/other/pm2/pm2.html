@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>pm2进程守护 | Hello CWG</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/note/img/left_logo.png">
+    <link name="author" content="cwg、蔡蔡、果果">
+    <link name="keywords" content="cwg、cwg笔记、蔡蔡笔记、vuePress介绍、vuePress说明、vuePress、前端、学习、">
+    <link name="referrer" content="no-referrer">
+    <meta name="description" content="cwg的学习笔记、前端、后端、教程、推荐等内容">
+    
+    <link rel="preload" href="/note/assets/css/0.styles.3d508d24.css" as="style"><link rel="preload" href="/note/assets/js/app.6137f109.js" as="script"><link rel="preload" href="/note/assets/js/2.a83e5f1b.js" as="script"><link rel="preload" href="/note/assets/js/1.e9423e49.js" as="script"><link rel="preload" href="/note/assets/js/59.ae4ff5d2.js" as="script"><link rel="prefetch" href="/note/assets/js/10.a622a579.js"><link rel="prefetch" href="/note/assets/js/11.a36d60ed.js"><link rel="prefetch" href="/note/assets/js/12.62b3ca4d.js"><link rel="prefetch" href="/note/assets/js/13.a4f27cd4.js"><link rel="prefetch" href="/note/assets/js/14.da764baa.js"><link rel="prefetch" href="/note/assets/js/15.9df6c2bc.js"><link rel="prefetch" href="/note/assets/js/16.1b8a0c23.js"><link rel="prefetch" href="/note/assets/js/17.71a8474b.js"><link rel="prefetch" href="/note/assets/js/18.8e376abb.js"><link rel="prefetch" href="/note/assets/js/19.0c849929.js"><link rel="prefetch" href="/note/assets/js/20.1fe549cc.js"><link rel="prefetch" href="/note/assets/js/21.8e037075.js"><link rel="prefetch" href="/note/assets/js/22.24313902.js"><link rel="prefetch" href="/note/assets/js/23.a6325176.js"><link rel="prefetch" href="/note/assets/js/24.fa3a8dc2.js"><link rel="prefetch" href="/note/assets/js/25.77e2de22.js"><link rel="prefetch" href="/note/assets/js/26.03022ddd.js"><link rel="prefetch" href="/note/assets/js/27.40e9bf23.js"><link rel="prefetch" href="/note/assets/js/28.7c393456.js"><link rel="prefetch" href="/note/assets/js/29.df168136.js"><link rel="prefetch" href="/note/assets/js/3.f5963c88.js"><link rel="prefetch" href="/note/assets/js/30.f5326d79.js"><link rel="prefetch" href="/note/assets/js/31.1054db6f.js"><link rel="prefetch" href="/note/assets/js/32.89fabe1d.js"><link rel="prefetch" href="/note/assets/js/33.4bf7be32.js"><link rel="prefetch" href="/note/assets/js/34.61b94b71.js"><link rel="prefetch" href="/note/assets/js/35.6de4dcba.js"><link rel="prefetch" href="/note/assets/js/36.e5ac569c.js"><link rel="prefetch" href="/note/assets/js/37.7c6e9012.js"><link rel="prefetch" href="/note/assets/js/38.fcb24c6b.js"><link rel="prefetch" href="/note/assets/js/39.40e1ec1f.js"><link rel="prefetch" href="/note/assets/js/4.c46f0de5.js"><link rel="prefetch" href="/note/assets/js/40.2e147dc6.js"><link rel="prefetch" href="/note/assets/js/41.e43c471a.js"><link rel="prefetch" href="/note/assets/js/42.cf23579f.js"><link rel="prefetch" href="/note/assets/js/43.48068456.js"><link rel="prefetch" href="/note/assets/js/44.280822ee.js"><link rel="prefetch" href="/note/assets/js/45.285b8e0c.js"><link rel="prefetch" href="/note/assets/js/46.6fb7edc4.js"><link rel="prefetch" href="/note/assets/js/47.bc4cf930.js"><link rel="prefetch" href="/note/assets/js/48.ac4db527.js"><link rel="prefetch" href="/note/assets/js/49.77943968.js"><link rel="prefetch" href="/note/assets/js/5.85a397b4.js"><link rel="prefetch" href="/note/assets/js/50.70b4ece0.js"><link rel="prefetch" href="/note/assets/js/51.7dbcac7d.js"><link rel="prefetch" href="/note/assets/js/52.471b5b0b.js"><link rel="prefetch" href="/note/assets/js/53.aae92902.js"><link rel="prefetch" href="/note/assets/js/54.92f864f4.js"><link rel="prefetch" href="/note/assets/js/55.d7b84799.js"><link rel="prefetch" href="/note/assets/js/56.6d16d691.js"><link rel="prefetch" href="/note/assets/js/57.93ffbbb9.js"><link rel="prefetch" href="/note/assets/js/58.ebcc424a.js"><link rel="prefetch" href="/note/assets/js/6.dd2a06e8.js"><link rel="prefetch" href="/note/assets/js/60.c01565a8.js"><link rel="prefetch" href="/note/assets/js/61.3ca9b9cb.js"><link rel="prefetch" href="/note/assets/js/62.0ffb05bb.js"><link rel="prefetch" href="/note/assets/js/63.001c2023.js"><link rel="prefetch" href="/note/assets/js/64.3fbf77e6.js"><link rel="prefetch" href="/note/assets/js/65.bdba6696.js"><link rel="prefetch" href="/note/assets/js/66.c45c84a5.js"><link rel="prefetch" href="/note/assets/js/67.802a5db5.js"><link rel="prefetch" href="/note/assets/js/68.aaa45967.js"><link rel="prefetch" href="/note/assets/js/7.1c947e57.js"><link rel="prefetch" href="/note/assets/js/vendors~docsearch.19933dad.js">
+    <link rel="stylesheet" href="/note/assets/css/0.styles.3d508d24.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/note/" class="home-link router-link-active"><img src="/note/img/left_logo.png" alt="Hello CWG" class="logo"> <span class="site-name can-hide">Hello CWG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://cn.vuejs.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vue3
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://uniapp.dcloud.net.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  uni-app
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://typescript.bootcss.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  TypeScript
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://pinia.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Pinia
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tailwindcss.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  tailwindcss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://element-plus.org/zh-CN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Element Plus
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vkuviewdoc.fsq.pub/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  uView 3.0
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://developers.weixin.qq.com/doc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微信官方文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/note/notes/programmer/programmer.html" class="nav-link">
+  程序员
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/frontend/html/tag.html" class="nav-link">
+  html
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/css/cssName.html" class="nav-link">
+  css
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/js/base/js.html" class="nav-link">
+  js
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/ts/base.html" class="nav-link">
+  ts
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/frontend/vue/vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/react/react.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          扩展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/frontend/extend/practical.html" class="nav-link">
+  实用功能
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/extend/knowledge.html" class="nav-link">
+  知识补充
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端学习" class="dropdown-title"><span class="title">后端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端学习" class="mobile-dropdown-title"><span class="title">后端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/backend/nodejs/nodeBasic.html" class="nav-link">
+  nodejs
+</a></li></ul></li><li class="dropdown-item"><h4>
+          扩展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/backend/extend/knowledge.html" class="nav-link">
+  知识补充
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他学习" class="dropdown-title"><span class="title">其他学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他学习" class="mobile-dropdown-title"><span class="title">其他学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/notes/other/git/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/other/pm2/pm2.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  pm2
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="教程" class="dropdown-title"><span class="title">教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="教程" class="mobile-dropdown-title"><span class="title">教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/notes/tutorials/cloudDiskMount.html" class="nav-link">
+  云盘挂载
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/tutorials/nvm.html" class="nav-link">
+  nvm安装
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="推荐" class="dropdown-title"><span class="title">推荐</span> <span class="arrow down"></span></button> <button type="button" aria-label="推荐" class="mobile-dropdown-title"><span class="title">推荐</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/notes/recommend/apply/computer.html" class="nav-link">
+  应用
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/recommend/plugin/vscode.html" class="nav-link">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/recommend/other/tool.html" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/recommend/other/resource.html" class="nav-link">
+  资源
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="面试" class="mobile-dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端面试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/interview/webHtmlCss/web.html" class="nav-link">
+  web基础+html+css
+</a></li><li class="dropdown-subitem"><a href="/note/notes/interview/js/base.html" class="nav-link">
+  js
+</a></li><li class="dropdown-subitem"><a href="/note/notes/interview/vue/base.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-subitem"><a href="/note/notes/interview/weChatApp/base.html" class="nav-link">
+  微信小程序
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://cn.vuejs.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vue3
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://uniapp.dcloud.net.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  uni-app
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://typescript.bootcss.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  TypeScript
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://pinia.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Pinia
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tailwindcss.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  tailwindcss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://element-plus.org/zh-CN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Element Plus
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://vkuviewdoc.fsq.pub/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  uView 3.0
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://developers.weixin.qq.com/doc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微信官方文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/note/notes/programmer/programmer.html" class="nav-link">
+  程序员
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/frontend/html/tag.html" class="nav-link">
+  html
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/css/cssName.html" class="nav-link">
+  css
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/js/base/js.html" class="nav-link">
+  js
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/ts/base.html" class="nav-link">
+  ts
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/frontend/vue/vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/react/react.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          扩展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/frontend/extend/practical.html" class="nav-link">
+  实用功能
+</a></li><li class="dropdown-subitem"><a href="/note/notes/frontend/extend/knowledge.html" class="nav-link">
+  知识补充
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端学习" class="dropdown-title"><span class="title">后端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端学习" class="mobile-dropdown-title"><span class="title">后端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/backend/nodejs/nodeBasic.html" class="nav-link">
+  nodejs
+</a></li></ul></li><li class="dropdown-item"><h4>
+          扩展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/backend/extend/knowledge.html" class="nav-link">
+  知识补充
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他学习" class="dropdown-title"><span class="title">其他学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他学习" class="mobile-dropdown-title"><span class="title">其他学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/notes/other/git/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/other/pm2/pm2.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  pm2
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="教程" class="dropdown-title"><span class="title">教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="教程" class="mobile-dropdown-title"><span class="title">教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/notes/tutorials/cloudDiskMount.html" class="nav-link">
+  云盘挂载
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/tutorials/nvm.html" class="nav-link">
+  nvm安装
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="推荐" class="dropdown-title"><span class="title">推荐</span> <span class="arrow down"></span></button> <button type="button" aria-label="推荐" class="mobile-dropdown-title"><span class="title">推荐</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/notes/recommend/apply/computer.html" class="nav-link">
+  应用
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/recommend/plugin/vscode.html" class="nav-link">
+  插件
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/recommend/other/tool.html" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/note/notes/recommend/other/resource.html" class="nav-link">
+  资源
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="面试" class="mobile-dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端面试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/notes/interview/webHtmlCss/web.html" class="nav-link">
+  web基础+html+css
+</a></li><li class="dropdown-subitem"><a href="/note/notes/interview/js/base.html" class="nav-link">
+  js
+</a></li><li class="dropdown-subitem"><a href="/note/notes/interview/vue/base.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-subitem"><a href="/note/notes/interview/weChatApp/base.html" class="nav-link">
+  微信小程序
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>pm2进程守护</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/note/notes/other/pm2/pm2.html#简介" class="sidebar-link">简介</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/note/notes/other/pm2/pm2.html#安装" class="sidebar-link">安装</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/note/notes/other/pm2/pm2.html#启动服务" class="sidebar-link">启动服务</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/note/notes/other/pm2/pm2.html#pm2常用命令" class="sidebar-link">pm2常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#停止进程" class="sidebar-link">停止进程</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#删除进程" class="sidebar-link">删除进程</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#重启进程" class="sidebar-link">重启进程</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#查看所有进程" class="sidebar-link">查看所有进程</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#查看某一个进程的信息" class="sidebar-link">查看某一个进程的信息</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#查看日志" class="sidebar-link">查看日志</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#监控所有的进程" class="sidebar-link">监控所有的进程</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#静态服务器" class="sidebar-link">静态服务器</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#扩展实例" class="sidebar-link">扩展实例</a></li><li class="sidebar-sub-header"><a href="/note/notes/other/pm2/pm2.html#pm2配置文件" class="sidebar-link">pm2配置文件</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="pm2进程守护"><a href="#pm2进程守护" class="header-anchor">#</a> pm2进程守护</h1> <p><a href="https://pm2.keymetrics.io/" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>pm2是一个进程管理工具,可以用它来管理你的node进程，并查看node进程的状态，当然也支持性能监控，进程守护，负载均衡等功能。pm2基本是Nodejs应用程序不二的守护进程选择，事实上它并不仅仅可以启动Nodejs的程序，只要是一般的脚本的程序它同样可以胜任。</p> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> pm2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>安装完成后可以使用  -v 参数 查看pm2的版本 检测是否安装成功</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ pm2 <span class="token parameter variable">-v</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="启动服务"><a href="#启动服务" class="header-anchor">#</a> 启动服务</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ pm2 start
+
+// 也可以在后面添加一些参数 来附加一些效果
+<span class="token parameter variable">--watch</span>  // <span class="token parameter variable">--watch</span> 监听程序源文件的变化 一旦发生变化自动重启 <span class="token punctuation">(</span>热启动效果<span class="token punctuation">)</span>
+--ignore-watch // 排除监听的目录或者文件  支持正则表达式
+<span class="token parameter variable">-n</span> <span class="token parameter variable">--name</span> // 设置程序的名称
+<span class="token parameter variable">--log</span> // 指定日志文件
+--max-memory-restart <span class="token punctuation">[</span>100MB<span class="token punctuation">]</span> // 设置最大占用内存
+--no-daemon // 非进程守护模式启动
+--no-autorestart // 关闭自动重启
+<span class="token parameter variable">--time</span> // 日志添加时间前缀
+<span class="token parameter variable">-e</span> <span class="token parameter variable">--error</span> <span class="token punctuation">[</span>path<span class="token punctuation">]</span> // 错误日志输出路径
+<span class="token parameter variable">-i</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span>  //cluster mode 模式启动n个进程实例 
+<span class="token parameter variable">-i</span> max  //集群模式  将会检测cpu的数量并运行尽可能多的进程  自动开启负载均衡的效果
+// 还有很多参数可以使用 详细可以查看官网  这些也可以通过pm2配置文件配置
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><strong>各项参数详解</strong></p> <ul><li>id: 进程id 标识作用 用于其他命令的指向</li> <li>name: 进程标识 用于其他命令的指向</li> <li>namespace: 环境名称</li> <li>version: 版本</li> <li>mode: 进程模式，cluster或fork。cluster有多个进程，而fork只有一个</li> <li>pid: 进程id  标识作用</li> <li>uptime: 运行时间</li> <li>↺ : 重启次数</li> <li>status: 进程是否在线</li> <li>cpu: cpu的占用率</li> <li>mem: 内存占用大小</li> <li>user: 启动用户名</li></ul> <p>可以启动多个这样的任务 可以通过以下命令查看所有的运行程序信息</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 查看所有使用pm2运行的程序信息
+$ pm2 list
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="pm2常用命令"><a href="#pm2常用命令" class="header-anchor">#</a> pm2常用命令</h2> <h3 id="停止进程"><a href="#停止进程" class="header-anchor">#</a> 停止进程</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 停止指定的进程
+$ pm2 stop <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span>进程id<span class="token punctuation">]</span>
+// 停止所有的进程
+$ pm2 stop all
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="删除进程"><a href="#删除进程" class="header-anchor">#</a> 删除进程</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 删除指定的进程
+$ pm2 delete <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span>进程id<span class="token punctuation">]</span>
+// 删除所有进程
+$ pm2 delete all
+// 杀死pm2的守护进程 同时也会杀死所有进程
+$ pm2 <span class="token function">kill</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="重启进程"><a href="#重启进程" class="header-anchor">#</a> 重启进程</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 以下两个命令都可以达到重启进程的效果
+$ pm2 restart <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span>进程id<span class="token punctuation">]</span>  // 重启效果 短时间内进程无效
+$ pm2 reload <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span>进程id<span class="token punctuation">]</span> // 重载效果 会保持进程在线 
+
+// 重启所有进程
+$ pm2 reload all
+// 重置重启数量
+$ pm2 reset <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="查看所有进程"><a href="#查看所有进程" class="header-anchor">#</a> 查看所有进程</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 以下三个命令都可以查看所有进程
+$ pm2 list
+$ pm2 <span class="token function">ls</span>
+$ pm2 status
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="查看某一个进程的信息"><a href="#查看某一个进程的信息" class="header-anchor">#</a> 查看某一个进程的信息</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ pm2 show <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span>进程id<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="查看日志"><a href="#查看日志" class="header-anchor">#</a> 查看日志</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 查看所有的日志
+$ pm2 logs
+// 查看指定的进程日志
+$ pm2 logs <span class="token punctuation">[</span>进程名<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span>进程id<span class="token punctuation">]</span>
+// 清空所有日志
+$ pm2 flush
+
+// 还可以附加一些参数 附加功能
+<span class="token parameter variable">--line</span> <span class="token punctuation">[</span>数字<span class="token punctuation">]</span>  // 查看最后多少条日志 默认是15条
+<span class="token parameter variable">--err</span> // 只查看错误日志
+<span class="token parameter variable">--timestamp</span> // 时实日志附带时间前缀
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="监控所有的进程"><a href="#监控所有的进程" class="header-anchor">#</a> 监控所有的进程</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 会进入一个信息面板
+$ pm2 monit
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="静态服务器"><a href="#静态服务器" class="header-anchor">#</a> 静态服务器</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ pm2 serve <span class="token punctuation">[</span>静态文件夹路径<span class="token punctuation">]</span> <span class="token punctuation">[</span>端口<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="扩展实例"><a href="#扩展实例" class="header-anchor">#</a> 扩展实例</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 将指定的进程扩展到n个
+$ pm2 scale <span class="token punctuation">[</span>服务名<span class="token punctuation">]</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="pm2配置文件"><a href="#pm2配置文件" class="header-anchor">#</a> pm2配置文件</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>// 当前目录下自动生成pm2的配置文件
+$ pm2 ecosystem
+
+// 以配置文件启动
+$ pm2 start ecosystem.config.js <span class="token parameter variable">--env</span> production
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>apps是一个数组 可以同时配置多个进程服务 还有很多的配置项 如果想要了解的更详细还请参照官网
+同时日志文件还支持 yml 格式配置 小编这里就不多演示了 详情请参照官网</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// ecosystem.config.js 配置演示</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">apps</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span>      <span class="token operator">:</span> <span class="token string">'demo'</span><span class="token punctuation">,</span>      <span class="token comment">// 应用的名称</span>
+    <span class="token literal-property property">script</span>    <span class="token operator">:</span> <span class="token string">'app.js'</span><span class="token punctuation">,</span>   <span class="token comment">// 应用文件路径</span>
+    <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token constant">PM2_SERVE_PATH</span><span class="token operator">:</span> <span class="token string">&quot;.&quot;</span><span class="token punctuation">,</span>    <span class="token comment">// 静态服务的路径</span>
+      <span class="token constant">PM2_SERVE_PORT</span><span class="token operator">:</span> <span class="token number">8080</span><span class="token punctuation">,</span>   <span class="token comment">// 静态服务器访问的端口</span>
+      <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'development'</span> <span class="token comment">// 设置开发环境运行时</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">env_production</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'production'</span>  <span class="token comment">// 设置生产环境运行时</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">instances</span><span class="token operator">:</span> <span class="token string">&quot;max&quot;</span><span class="token punctuation">,</span>         <span class="token comment">// 将应用程序分布在所有CPU核心上 也可以指定多少个</span>
+    <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>              <span class="token comment">// 热启动模式</span>
+    <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">'./out.log'</span><span class="token punctuation">,</span>      <span class="token comment">// 指定日志标准输出文件及位置</span>
+    <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">'./error.log'</span><span class="token punctuation">,</span>     <span class="token comment">// 错误输出日志文件及位置</span>
+    <span class="token literal-property property">merge_logs</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>         <span class="token comment">// 是否可以合并日志</span>
+    <span class="token literal-property property">log_type</span><span class="token operator">:</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">,</span>         <span class="token comment">// 日志类型</span>
+    <span class="token literal-property property">log_date_format</span><span class="token operator">:</span> <span class="token string">&quot;DD-MM-YYYY&quot;</span><span class="token punctuation">,</span>  <span class="token comment">// 日志的日期格式</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">deploy</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">production</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">user</span> <span class="token operator">:</span> <span class="token string">'SSH_USERNAME'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">host</span> <span class="token operator">:</span> <span class="token string">'SSH_HOSTMACHINE'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">ref</span>  <span class="token operator">:</span> <span class="token string">'origin/master'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">repo</span> <span class="token operator">:</span> <span class="token string">'GIT_REPOSITORY'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">path</span> <span class="token operator">:</span> <span class="token string">'DESTINATION_PATH'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'pre-deploy-local'</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'post-deploy'</span> <span class="token operator">:</span> <span class="token string">'npm install &amp;&amp; pm2 reload ecosystem.config.js --env production'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'pre-setup'</span><span class="token operator">:</span> <span class="token string">''</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2023-01-03 14-21-49</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/note/assets/js/app.6137f109.js" defer></script><script src="/note/assets/js/2.a83e5f1b.js" defer></script><script src="/note/assets/js/1.e9423e49.js" defer></script><script src="/note/assets/js/59.ae4ff5d2.js" defer></script>
+  </body>
+</html>
